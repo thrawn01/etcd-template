@@ -1,4 +1,5 @@
 .idea/
 *.iml
-bin/
 glide.lock
+build/
+release/
