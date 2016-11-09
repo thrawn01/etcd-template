@@ -59,7 +59,11 @@ For local installation and testing template generation
 $ go install github.com/thrawn01/etcd-template/cmd/./...
 ```
 
-For `Dockerfile`
+Install in a container with `Dockerfile`
 ```
-#TODO
+ENV ETCD_TEMPLATE_VERSION v0.1
+RUN curl -Lso /tmp/etcd-template.tar.gz \
+    "https://github.com/thrawn01/etcd-template/releases/download/${ETCD_TEMPLATE_VERSION}/etcd-template-${ETCD_TEMPLATE_VERSION}.tar.gz" \
+    && tar zxf /tmp/etcd-template.tar.gz -C /usr/local/bin \
+    && rm /tmp/etcd-template.tar.gz
 ```
